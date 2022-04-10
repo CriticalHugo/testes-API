@@ -8,11 +8,11 @@ const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Port: ${port}`));
 
-app.get('/api/piada', (req, res) => {
+app.get('/api/joke', (req, res) => {
     fetch('https://api.chucknorris.io/jokes/random')
         .then((resp) => resp.json())
         .then(function(data) {
-            res.send(`Piada: ${data.value}`);
+            res.send(`Joke: ${data.value}`);
         })
         .catch(function(error) {
             console.log(error);
